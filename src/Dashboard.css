@@ -1,0 +1,13 @@
+.dashboard {
+  display: flex;
+  gap: 20px;
+}
+
+.farm-plot {
+  flex-grow: 2;
+}
+
+.weather-widget,
+.task-scheduler {
+  flex-grow: 1;
+}
