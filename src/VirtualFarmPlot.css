@@ -1,0 +1,60 @@
+/* VirtualFarmPlot.css */
+
+.farm-plot {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.plot {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.plot img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.plot p {
+  margin: 10px;
+  padding: 0 10px;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.plot p:first-child {
+  margin-top: -5px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Specific styles for water level and pH level indicators */
+.plot .water-level, .plot .ph-level {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Example styles for different water levels */
+.plot .water-level.low { color: #ff4500; }
+.plot .water-level.medium { color: #ffa500; }
+.plot .water-level.high { color: #008000; }
+
+/* pH Level coloring based on acidity or alkalinity */
+.plot .ph-level.acidic { color: #ff4500; }
+.plot .ph-level.neutral { color: #2f4f4f; }
+.plot .ph-level.alkaline { color: #4682b4; }
