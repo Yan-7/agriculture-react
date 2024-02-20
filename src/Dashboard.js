@@ -53,27 +53,31 @@ const Dashboard = () => {
 
   const [plots, setPlots] = useState([
     {
+      id: 1,
       plantType: "Lettuce",
       growthStage: "seeding",
-      waterLevel: 44,
-      phLevel: 6.5,
+      waterLevel: 85,
+      phLevel: 7,
     },
     {
+      id: 2,
       plantType: "Tomato",
       growthStage: "harvest",
-      waterLevel: 65,
-      phLevel: 6.2,
+      waterLevel: 45,
+      phLevel: 4,
     },
     {
+      id: 3,
       plantType: "Carrot",
       growthStage: "Growing",
-      waterLevel: 45,
-      phLevel: 6.9,
+      waterLevel: 70,
+      phLevel: 9,
     },
     {
+      id: 4,
       plantType: "Basil",
       growthStage: "Growing",
-      waterLevel: 35,
+      waterLevel: 80,
       phLevel: 5.8,
     },
   ]);

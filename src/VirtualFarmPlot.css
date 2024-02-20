@@ -35,6 +35,31 @@
   color: #333;
   font-size: 0.9rem;
   text-align: center;
+
+  
+}
+.plot-summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px; /* Adjust based on your layout */
+  text-align: center;
+}
+
+.plot-box {
+  width: 60px; /* Smaller width for compact summary view */
+  height: 60px; /* Square boxes */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px; /* Rounded corners for a smoother look */
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 0.75rem; /* Smaller font size for the box content */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Soft shadow for depth */
 }
 
 .plot p:first-child {

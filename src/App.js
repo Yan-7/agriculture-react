@@ -1,15 +1,21 @@
-import React from "react";
-import Dashboard from "./Dashboard"; // Ensure this path is correct
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import Dashboard from "./Dashboard";
+import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-        
-        {/* <Route path="/plants" element={<PlantLibrary />} /> */}
+        <Route
+          path="/"
+          element={
+            <div>
+              <Dashboard />
+            </div>
+          }
+        />
+        {/* Other routes */}
       </Routes>
     </BrowserRouter>
   );
