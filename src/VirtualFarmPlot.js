@@ -1,3 +1,4 @@
+// VirtualFarmPlot.js
 import React from "react";
 import "./VirtualFarmPlot.css";
 import lettuceImage from "./images/lettuce.bmp";
@@ -38,7 +39,7 @@ const getPlotColor = (plantHealthScore) => {
 const VirtualFarmPlot = ({ plots }) => (
   <div className="farm-plot">
     {/* summary */}
-    <div className="plot-summary"> 
+    <div className="plot-summary">
       <h2>Summary Information</h2>
       {plots.map((plot, index) => (
         <div

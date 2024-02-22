@@ -1,8 +1,7 @@
+// Dashboard.js
 import { useEffect, useState } from "react";
 import "./Dashboard.css";
 import VirtualFarmPlot from "./VirtualFarmPlot";
-
-
 
 const WeatherWidget = ({ weather }) => (
   <div className="weather-widget">
@@ -50,37 +49,7 @@ const TaskScheduler = ({ tasks, addTask }) => {
 };
 
 const Dashboard = () => {
-
-  const [plots, setPlots] = useState([
-    {
-      id: 1,
-      plantType: "Lettuce",
-      growthStage: "seeding",
-      waterLevel: 85,
-      phLevel: 7,
-    },
-    {
-      id: 2,
-      plantType: "Tomato",
-      growthStage: "harvest",
-      waterLevel: 45,
-      phLevel: 4,
-    },
-    {
-      id: 3,
-      plantType: "Carrot",
-      growthStage: "Growing",
-      waterLevel: 70,
-      phLevel: 9,
-    },
-    {
-      id: 4,
-      plantType: "Basil",
-      growthStage: "Growing",
-      waterLevel: 80,
-      phLevel: 5.8,
-    },
-  ]);
+  const [plots, setPlots] = useState([]);
 
   // Initialize weather state to match the expected structure or null
   const [weather, setWeather] = useState(null);
@@ -92,7 +61,6 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
-    
     const fetchWeather = async () => {
       const key = "05635c36859cc1ad617f0c7cbb493a9e";
       const city = "Hadera";
@@ -109,7 +77,20 @@ const Dashboard = () => {
     };
 
     fetchWeather();
-  }, []);
+
+    const fetchPlots = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/plots"); // Adjust the URL/port as needed
+        if (!response.ok) throw new Error("Network response was not ok");
+        const data = await response.json();
+        setPlots(data);
+      } catch (error) {
+        console.error("Could not fetch plots:", error);
+      }
+    };
+
+    fetchPlots();
+  }, []); // Empty dependency array means this effect runs once on mount
 
   return (
     <div className="dashboard">
